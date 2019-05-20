@@ -6,7 +6,7 @@
 		"greenpeace/planet4-child-theme" : "dev-develop",
 		"greenpeace/planet4-master-theme" : "dev-develop",
 		"greenpeace/planet4-plugin-blocks" : "dev-develop",
-		"wpackagist-plugin/elasticpress":"3.0"
+		"wpackagist-plugin/elasticpress" : "3.0.1"
 	},
 	"scripts": {
 		"site:custom" : []
