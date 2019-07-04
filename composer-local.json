@@ -6,7 +6,7 @@
 		"greenpeace/planet4-child-theme" : "dev-develop",
 		"greenpeace/planet4-master-theme" : "dev-planet-3639",
 		"greenpeace/planet4-plugin-blocks" : "dev-planet-3639",
-		"greenpeace/planet4-plugin-engagingnetworks" : "dev-planet-3639"
+		"greenpeace/planet4-plugin-engagingnetworks" : "dev-develop"
 	},
 	"scripts": {
 		"site:custom" : []
