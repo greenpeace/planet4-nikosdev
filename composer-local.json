@@ -5,8 +5,8 @@
 	"require": {
 		"greenpeace/planet4-child-theme" : "dev-develop",
 		"greenpeace/planet4-master-theme" : "dev-planet-3872",
-		"greenpeace/planet4-plugin-blocks" : "dev-release/v1.54",
-		"greenpeace/planet4-plugin-engagingnetworks" : "dev-release/v2.8"
+		"greenpeace/planet4-plugin-blocks" : "dev-release/v1.55",
+		"greenpeace/planet4-plugin-engagingnetworks" : "dev-release/v2.9"
 	},
 	"scripts": {
 		"site:custom" : []
