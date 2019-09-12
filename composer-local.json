@@ -3,9 +3,9 @@
 	"description": "Greenpeace P4 NikosDev",
 	"license": "MIT",
 	"require": {
-		"greenpeace/planet4-master-theme": "dev-release/v1.56",
-		"greenpeace/planet4-plugin-blocks": "dev-release/v1.56",
-		"greenpeace/planet4-plugin-engagingnetworks": "dev-release/v2.10"
+		"greenpeace/planet4-master-theme": "dev-planet-4039",
+		"greenpeace/planet4-plugin-blocks": "dev-release/v1.59",
+		"greenpeace/planet4-plugin-engagingnetworks": "dev-release/v2.13"
 	},
 	"scripts": {
 		"site:custom" : []
