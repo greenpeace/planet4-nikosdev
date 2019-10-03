@@ -3,7 +3,7 @@
 	"description": "Greenpeace P4 NikosDev",
 	"license": "MIT",
 	"require": {
-		"greenpeace/planet4-master-theme" : "dev-test-redirect"
+		"greenpeace/planet4-master-theme" : "dev-planet-4101"
 	},
 	"scripts": {
 		"site:custom" : []
