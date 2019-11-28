@@ -3,8 +3,7 @@
 	"description": "Greenpeace P4 NikosDev",
 	"license": "MIT",
 	"require": {
-		"greenpeace/planet4-master-theme" : "dev-planet-4448",
-		"greenpeace/planet4-plugin-gutenberg-blocks" : "dev-planet-4448"
+		"greenpeace/planet4-master-theme" : "dev-develop"
 	},
 	"scripts": {
 		"install:plugin-gravity-forms": "wp plugin install --activate https://raw.githubusercontent.com/greenpeace/planet4-3rdparty-plugins/master/https://raw.githubusercontent.com/greenpeace/planet4-3rdparty-plugins/master/gravityforms_2.4.4.zip",
