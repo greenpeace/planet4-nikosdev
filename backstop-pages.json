@@ -1,0 +1,11 @@
+{
+    "scenarios": [
+      {
+        "label": "Planet4 search page",
+        "url": "https://APP_HOSTNAME/APP_HOSTPATH/fr/?s=",
+        "delay": 3000,
+        "misMatchThreshold": 1
+      }
+    ]
+  }
+  
