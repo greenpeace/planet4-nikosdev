@@ -238,5 +238,5 @@ workflows:
       - sync-sql-to-develop:
           <<: *sync_common
           requires:
-            - sync-sql-to-release
+            - create-sync-sql
   
