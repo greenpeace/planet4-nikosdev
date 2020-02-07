@@ -20,6 +20,9 @@ job_environments:
     NEWRELIC_APPNAME: P4 Defaultcontent Development
     WP_DB_NAME: planet4-defaultcontent_wordpress
     WP_STATELESS_BUCKET: planet4-defaultcontent-stateless-develop
+    APP_HOSTPATH: defaultcontent
+    CONTAINER_PREFIX: planet4-defaultcontent
+    WP_DB_NAME_PREFIX: planet4-defaultcontent_wordpress
   develop_environment: &develop_environment
     APP_ENVIRONMENT: development
     APP_HOSTNAME: k8s.p4.greenpeace.org
@@ -163,7 +166,6 @@ jobs:
   create-sync-sql:
     <<: *defaults
     environment:
-      <<: *common_environment
       <<: *source_environment
     working_directory: /tmp/workspace/src
     steps:
