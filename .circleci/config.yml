@@ -9,20 +9,6 @@ job_environments:
     APP_HOSTPATH: nikosdev
     CONTAINER_PREFIX: planet4-nikosdev
     WP_DB_NAME_PREFIX: planet4-nikosdev_wordpress
-  source_environment: &source_environment
-    APP_ENVIRONMENT: development
-    APP_HOSTNAME: k8s.p4.greenpeace.org
-    CLOUDSQL_INSTANCE: p4-develop-k8s
-    GOOGLE_PROJECT_ID: planet-4-151612
-    GCLOUD_CLUSTER: p4-development
-    HELM_NAMESPACE: develop
-    HELM_RELEASE: planet4-defaultcontent
-    NEWRELIC_APPNAME: P4 Defaultcontent Development
-    WP_DB_NAME: planet4-defaultcontent_wordpress
-    WP_STATELESS_BUCKET: planet4-defaultcontent-stateless-develop
-    APP_HOSTPATH: defaultcontent
-    CONTAINER_PREFIX: planet4-defaultcontent
-    WP_DB_NAME_PREFIX: planet4-defaultcontent_wordpress
   develop_environment: &develop_environment
     APP_ENVIRONMENT: development
     APP_HOSTNAME: k8s.p4.greenpeace.org
@@ -163,23 +149,7 @@ jobs:
       <<: *develop_environment
     <<: *backstop_compare_steps
   
-  create-sync-sql:
-    <<: *defaults
-    environment:
-      <<: *source_environment
-    working_directory: /tmp/workspace/src
-    steps:
-      - checkout
-      - attach_workspace:
-          at: /tmp/workspace
-      - run:
-          name: Configure
-          command: |
-            ${HOME}/scripts/activate-gcloud-account.sh
-      - run: echo $SQLPROXY_KEY | base64 -d > key.json
-      - run: /home/circleci/sql_create_sync_file.sh
-  
-  sync-sql-to-develop:
+  data-sync:
     <<: *defaults
     environment:
       <<: *common_environment
@@ -193,9 +163,7 @@ jobs:
           name: Configure
           command: |
             ${HOME}/scripts/activate-gcloud-account.sh
-      - run: echo $SQLPROXY_KEY | base64 -d > key.json
-      - run: /home/circleci/sql_to_sync_site.sh develop
-
+      - run: /home/circleci/sync_to_test_site.sh
 
 workflow_definitions:
   develop_common: &develop_common
@@ -203,13 +171,6 @@ workflow_definitions:
     filters:
       branches:
         only: develop
-  sync_common: &sync_common
-    context: org-global
-    filters:
-      branches:
-        ignore: /.*/
-      tags:
-        only: /sync.*/
 
 workflows:
   version: 2
@@ -225,6 +186,10 @@ workflows:
           <<: *develop_common
           requires:
             - build-branch
+      - data-sync:
+          <<: *develop_common
+          requires:
+            - deploy-develop
       - test-develop:
           <<: *develop_common
           requires:
@@ -233,12 +198,4 @@ workflows:
           <<: *develop_common
           requires:
             - deploy-develop
-  create-sync-sql:
-    jobs:
-      - create-sync-sql:
-          <<: *sync_common
-      - sync-sql-to-develop:
-          <<: *sync_common
-          requires:
-            - create-sync-sql
   
