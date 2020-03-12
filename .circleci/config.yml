@@ -87,7 +87,7 @@ job_definitions:
 
   backstop_history_steps: &backstop_history_steps
     docker:
-      - image: greenpeaceinternational/planet4-backstop:master
+      - image: greenpeaceinternational/planet4-backstop:improv
     working_directory: /src
     steps:
       - run: ./checkout.sh
@@ -103,7 +103,7 @@ job_definitions:
 
   backstop_compare_steps: &backstop_compare_steps
     docker:
-      - image: greenpeaceinternational/planet4-backstop:master
+      - image: greenpeaceinternational/planet4-backstop:improv
     working_directory: /src
     steps:
       - run: ./checkout.sh
