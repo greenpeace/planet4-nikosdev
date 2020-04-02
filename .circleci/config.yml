@@ -9,7 +9,6 @@ job_environments:
     APP_HOSTPATH: nikosdev
     CONTAINER_PREFIX: planet4-nikosdev
     WP_DB_NAME_PREFIX: planet4-nikosdev_wordpress
-    WP_VERSION: 5.3.2
   develop_environment: &develop_environment
     APP_ENVIRONMENT: development
     APP_HOSTNAME: k8s.p4.greenpeace.org
