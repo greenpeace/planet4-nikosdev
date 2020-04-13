@@ -8,7 +8,7 @@
 	},
 	"data_from": "international",
 	"scripts": {
-		"clone:ghkey": "echo ${GITHUB_RO} > .key",
+		"clone:ghkey": "echo ${GITHUB_RO} > .key ; chmod 600 .key",
 		"clone:3rdparty": "GIT_SSH_COMMAND='ssh -i .key' git clone --depth=1 git@github.com:greenpeace/planet4-3rdparty-plugins.git",
 		"install:plugin-wpml": "wp plugin install --activate planet4-3rdparty-plugins/sitepress-multilingual-cms.4.3.4.zip",
     		"site:custom": [
