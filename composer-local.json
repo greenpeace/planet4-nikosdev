@@ -7,12 +7,5 @@
 		"greenpeace/planet4-master-theme" : "dev-master"
 	},
 	"data_from": "international",
-	"scripts": {
-		"clone:3rdparty": "gcloud source repos clone github_greenpeace_planet4-3rdparty-plugins --project=planet-4-151612",
-		"install:plugin-wpml": "wp plugin install --activate github_greenpeace_planet4-3rdparty-plugins/sitepress-multilingual-cms.4.3.4.zip",
-    		"site:custom": [
-			"@clone:3rdparty",
-      			"@install:plugin-wpml"
-		]
-	}
+	"scripts": {}
 }
