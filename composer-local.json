@@ -7,5 +7,10 @@
 		"greenpeace/planet4-master-theme" : "dev-master"
 	},
 	"data_from": "international",
-	"scripts": {}
+	"scripts": {
+		"install:plugin-wpml": "wp plugin install --activate https://storage.googleapis.com/planet4-3rdparty-plugins/sitepress-multilingual-cms.4.3.4.zip",
+		"site:custom": [
+		  "@install:plugin-wpml"
+		]
+	  }
 }
