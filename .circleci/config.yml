@@ -60,6 +60,7 @@ job_definitions:
       - when:
           condition: << parameters.notify >>
           steps:
+            # Notify p4-activity-ci
             - slack/status:
                 fail_only: true
                 channel: C015MQGG3KQ
@@ -135,6 +136,7 @@ job_definitions:
           condition: << parameters.notify >>
           steps:
             - slack/status:
+                # Notify p4-activity-ci
                 channel: C015MQGG3KQ
                 webhook: ${SLACK_NRO_WEBHOOK}
 
