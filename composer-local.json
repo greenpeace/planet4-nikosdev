@@ -3,9 +3,9 @@
 	"description": "Greenpeace P4 NikosDev",
 	"license": "MIT",
 	"require": {
-		"greenpeace/planet4-plugin-gutenberg-engagingnetworks" : "dev-master",
 		"greenpeace/planet4-plugin-gutenberg-blocks" : "dev-master",
-		"greenpeace/planet4-master-theme" : "dev-master"
+		"greenpeace/planet4-master-theme" : "dev-master",
+		"wpackagist-plugin/core-sitemaps": "0.4.2"
 	},
 	"data_from": "international",
 	"scripts": {}
