@@ -279,7 +279,7 @@ workflow_definitions:
     context: org-global
     filters:
       branches:
-        only: develop
+        only: main
 
 workflows:
   develop:
